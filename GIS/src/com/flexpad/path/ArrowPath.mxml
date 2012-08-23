@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Path 
+    data="M2 13 0 10.8 4.6 6.5 0 2.2 2 0 9 6.45 2 13"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx">
+</s:Path>

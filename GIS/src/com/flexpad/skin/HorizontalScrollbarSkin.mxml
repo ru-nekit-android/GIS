@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    alpha.disabled="0.5">
+    <fx:Metadata>
+        <![CDATA[
+    	[HostComponent("spark.components.HScrollBar")]
+    ]]>
+    </fx:Metadata>
+    <s:states>
+        <s:State name="normal"/>
+        <s:State name="disabled"/>
+        <s:State name="inactive"/>
+    </s:states>
+
+    <s:Button id="decrementButton"
+        width.normal="18"
+        left.disabled="0" left.inactive="0" right.normal="18" top="0" top.normal="0" bottom.disabled="0" bottom.inactive="0" bottom.normal="0"
+        skinClass="com.flexpad.skin.HorizontalScrollbarLeftButtonSkin"/>
+    <s:Button id="incrementButton"
+        right="0" top="0" bottom="0"
+        skinClass="com.flexpad.skin.HorizontalScrollbarRightButtonSkin"/>
+    <s:Button id="track"
+        left="17" left.normal="0" right="12" right.normal="31" top="0" top.normal="0" bottom="0" bottom.normal="0"
+        skinClass="com.flexpad.skin.HorizontalScrollbarTrackSkin"/>
+    <s:Button id="thumb"
+        width="25" height="15"
+        left="0" left.normal="20" top="0" top.normal="0"
+        skinClass="com.flexpad.skin.HorizontalScrollbarThumbSkin"/>
+</s:Skin>

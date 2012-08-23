@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark">
+
+    <fx:Metadata>
+    	[HostComponent("spark.components.Button")]
+    </fx:Metadata>
+
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="down"/>
+        <s:State name="over"/>
+        <s:State name="disabled"/>
+    </s:states>
+
+    <s:Rect id="rect1"
+        left="0" right="0" top="0" bottom="0"
+        includeIn="up"
+        radiusX="8">
+        <s:stroke>
+            <s:SolidColorStroke 
+                color="#cccccc"
+                weight="1"/>
+        </s:stroke>
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry 
+                    color="#cccccc"
+                    alpha="1.0"
+                    ratio="0.027450980392156862"/>
+                <s:GradientEntry 
+                    color="#FFFFFF"
+                    alpha="1"
+                    ratio="1"/>
+            </s:LinearGradient>
+        </s:fill>
+        <s:filters>
+            <s:DropShadowFilter 
+                color="#999999"
+                hideObject="false"
+                knockout="false"
+                distance="2"
+                strength="1"
+                inner="true"
+                blurX="3"
+                angle="105.0"
+                blurY="3"
+                quality="2"
+                alpha="1.0"/>
+        </s:filters>
+    </s:Rect>
+    <s:Rect id="rect0"
+        left="0" right="0" top="0" bottom="0"
+        includeIn="down"
+        radiusX="8">
+        <s:stroke>
+            <s:SolidColorStroke 
+                color="#cccccc"
+                weight="1"/>
+        </s:stroke>
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry 
+                    color="#cccccc"
+                    alpha="1.0"
+                    ratio="0.027450980392156862"/>
+                <s:GradientEntry 
+                    color="#FFFFFF"
+                    alpha="1"
+                    ratio="1"/>
+            </s:LinearGradient>
+        </s:fill>
+        <s:filters>
+            <s:DropShadowFilter 
+                color="#999999"
+                hideObject="false"
+                knockout="false"
+                distance="2"
+                strength="1"
+                inner="true"
+                blurX="3"
+                angle="45.0"
+                blurY="3"
+                quality="2"
+                alpha="1.0"/>
+        </s:filters>
+    </s:Rect>
+    <s:Rect id="rect2"
+        left="0" right="0" top="0" bottom="0"
+        includeIn="over"
+        radiusX="8">
+        <s:stroke>
+            <s:SolidColorStroke 
+                color="#cccccc"
+                weight="1"/>
+        </s:stroke>
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry 
+                    color="#cccccc"
+                    alpha="1.0"
+                    ratio="0.027450980392156862"/>
+                <s:GradientEntry 
+                    color="#FFFFFF"
+                    alpha="1"
+                    ratio="1"/>
+            </s:LinearGradient>
+        </s:fill>
+        <s:filters>
+            <s:DropShadowFilter 
+                color="#999999"
+                hideObject="false"
+                knockout="false"
+                distance="2"
+                strength="1"
+                inner="true"
+                blurX="3"
+                angle="45.0"
+                blurY="3"
+                quality="2"
+                alpha="1.0"/>
+        </s:filters>
+    </s:Rect>
+    <s:Rect id="rect3"
+        left="0" right="0" top="0" bottom="0"
+        includeIn="disabled"
+        radiusX="8">
+        <s:stroke>
+            <s:SolidColorStroke 
+                color="#cccccc"
+                weight="1"/>
+        </s:stroke>
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry 
+                    color="#cccccc"
+                    alpha="1.0"
+                    ratio="0.027450980392156862"/>
+                <s:GradientEntry 
+                    color="#FFFFFF"
+                    alpha="1"
+                    ratio="1"/>
+            </s:LinearGradient>
+        </s:fill>
+        <s:filters>
+            <s:DropShadowFilter 
+                color="#999999"
+                hideObject="false"
+                knockout="false"
+                distance="2"
+                strength="1"
+                inner="true"
+                blurX="3"
+                angle="45.0"
+                blurY="3"
+                quality="2"
+                alpha="1.0"/>
+        </s:filters>
+    </s:Rect>
+    <s:transitions>
+        <s:Transition fromState="disabled"
+            toState="up"
+            autoReverse="true">
+            <s:Parallel>
+                <s:Parallel target="{rect1}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+                <s:Parallel target="{rect3}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+            </s:Parallel>
+        </s:Transition>
+        <s:Transition fromState="up"
+            toState="down"
+            autoReverse="true">
+            <s:Parallel>
+                <s:Parallel target="{rect1}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+                <s:Parallel target="{rect0}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+            </s:Parallel>
+        </s:Transition>
+    </s:transitions>
+
+</s:Skin>

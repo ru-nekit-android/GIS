@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:m="library:adobe/flex/gumbo">
+
+    <fx:Metadata>
+    	[HostComponent("spark.components.Button")]
+    </fx:Metadata>
+
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="down"/>
+        <s:State name="over"/>
+        <s:State name="disabled"/>
+    </s:states>
+
+    <s:Rect id="rect1"
+        height="99"
+        left="0" right="0" top="0" bottom="0"
+        radiusX="3"
+        radiusY="3"
+        includeIn="up,over,down,disabled">
+        <s:stroke>
+            <s:SolidColorStroke color="#333333"/>
+        </s:stroke>
+        <s:fill>
+            <s:SolidColor color="0xDEECFF"/>
+        </s:fill>
+        <s:filters>
+            <s:DropShadowFilter 
+                color="#999999"
+                hideObject="false"
+                knockout="false"
+                distance="4.0"
+                strength="1"
+                inner="true"
+                blurX="4.0"
+                angle="45.0"
+                blurY="4.0"
+                quality="2"
+                alpha="1.0"/>
+        </s:filters>
+    </s:Rect>
+
+</s:Skin>

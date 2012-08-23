@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark">
+
+    <fx:Metadata>
+    	[HostComponent("spark.components.Button")]
+    </fx:Metadata>
+
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="over"/>
+        <s:State name="down"/>
+        <s:State name="disabled"/>
+    </s:states>
+
+    <!-- background -->
+    <!-- shadow (down state only) -->
+
+    <!-- arrow -->
+    <s:Group id="group0"
+        x="0" y="18"
+        rotation="-90"
+        includeIn="up">
+        <s:Rect id="rect0"
+            x="0.5" y="0.5" width="17" height="14">
+            <s:fill>
+                <s:LinearGradient rotation="90">
+                    <s:GradientEntry 
+                        color="#FFFFFF"
+                        alpha="1"
+                        ratio="0"/>
+                    <s:GradientEntry 
+                        color="#cccccc"
+                        alpha="1.0"
+                        ratio="1"/>
+                </s:LinearGradient>
+            </s:fill>
+            <s:stroke>
+                <s:LinearGradientStroke caps="none"
+                    joints="miter"
+                    miterLimit="4"
+                    rotation="180"
+                    weight="1">
+                    <s:GradientEntry 
+                        color="#999999"
+                        alpha="1.0"
+                        ratio="0"/>
+                    <s:GradientEntry 
+                        color="#cccccc"
+                        alpha="1.0"
+                        ratio="1"/>
+                </s:LinearGradientStroke>
+            </s:stroke>
+        </s:Rect>
+        <s:Path id="path0"
+            x="5" y="4"
+            data="M 0 4 L 7 7.5 7 0 Z">
+            <s:fill>
+                <s:SolidColor color="#333333"/>
+            </s:fill>
+        </s:Path>
+    </s:Group>
+    <s:Group id="group2"
+        x="0" y="18"
+        rotation="-90"
+        includeIn="over">
+        <s:Rect id="rect9"
+            x="0.5" y="0.5" width="17" height="14"
+            radiusX="0">
+            <s:fill>
+                <s:LinearGradient rotation="90">
+                    <s:GradientEntry 
+                        color="0x005ECA"
+                        alpha="1.0"
+                        ratio="0"/>
+                    <s:GradientEntry 
+                        color="0xACE7FF"
+                        alpha="1"
+                        ratio="1"/>
+                </s:LinearGradient>
+            </s:fill>
+            <s:stroke>
+                <s:LinearGradientStroke caps="none"
+                    joints="miter"
+                    miterLimit="4"
+                    rotation="90"
+                    weight="1">
+                    <s:GradientEntry 
+                        color="#0065ff"
+                        alpha="1.0"
+                        ratio="0"/>
+                    <s:GradientEntry 
+                        color="#666666"
+                        alpha="1.0"
+                        ratio="1"/>
+                </s:LinearGradientStroke>
+            </s:stroke>
+        </s:Rect>
+        <s:Rect id="rect11"
+            x="1" y="7" width="16" height="6"
+            alpha="0.2"
+            radiusX="0">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Rect>
+        <s:Rect id="rect10"
+            x="1" y="1" width="16" height="6"
+            alpha="0.5"
+            radiusX="0">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Rect>
+
+        <s:Path id="path2"
+            x="5" y="4"
+            data="M 0 4 L 7 7.5 7 0 Z">
+            <s:fill>
+                <s:SolidColor color="#000000"/>
+            </s:fill>
+        </s:Path>
+    </s:Group>
+    <s:Group id="group1"
+        x="0" y="18"
+        rotation="-90"
+        includeIn="down">
+        <s:Rect id="rect2"
+            x="0.5" y="0.5" width="17" height="14"
+            radiusX="0">
+            <s:fill>
+                <s:LinearGradient rotation="90">
+                    <s:GradientEntry 
+                        color="0x005ECA"
+                        alpha="1.0"
+                        ratio="0"/>
+                    <s:GradientEntry 
+                        color="0xACE7FF"
+                        alpha="1"
+                        ratio="1"/>
+                </s:LinearGradient>
+            </s:fill>
+            <s:stroke>
+                <s:LinearGradientStroke caps="none"
+                    joints="miter"
+                    miterLimit="4"
+                    rotation="90"
+                    weight="1">
+                    <s:GradientEntry 
+                        color="#0065ff"
+                        alpha="1.0"
+                        ratio="0"/>
+                    <s:GradientEntry 
+                        color="#666666"
+                        alpha="1.0"
+                        ratio="1"/>
+                </s:LinearGradientStroke>
+            </s:stroke>
+        </s:Rect>
+        <s:Rect id="rect3"
+            x="1" y="1" width="16" height="6"
+            alpha="0.5"
+            radiusX="0">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Rect>
+        <s:Rect id="rect4"
+            x="1" y="7" width="16" height="6"
+            alpha="0.2"
+            radiusX="0">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Rect>
+        <s:Path id="path3"
+            x="5" y="4"
+            data="M 0 4 L 7 7.5 7 0 Z">
+            <s:fill>
+                <s:SolidColor color="#000000"/>
+            </s:fill>
+        </s:Path>
+    </s:Group>
+    <s:Group id="group3"
+        x="0" y="18"
+        rotation="-90"
+        includeIn="disabled">
+        <s:Rect id="rect1"
+            x="0.5" y="0.5" width="17" height="14">
+            <s:fill>
+                <s:LinearGradient rotation="90">
+                    <s:GradientEntry 
+                        color="#cccccc"
+                        alpha="1.0"
+                        ratio="0"/>
+                    <s:GradientEntry 
+                        color="#FFFFFF"
+                        alpha="1"
+                        ratio="1"/>
+                </s:LinearGradient>
+            </s:fill>
+            <s:stroke>
+                <s:LinearGradientStroke caps="none"
+                    joints="miter"
+                    miterLimit="4"
+                    rotation="180"
+                    weight="1">
+                    <s:GradientEntry 
+                        color="#999999"
+                        alpha="1.0"
+                        ratio="0"/>
+                    <s:GradientEntry 
+                        color="#cccccc"
+                        alpha="1.0"
+                        ratio="1"/>
+                </s:LinearGradientStroke>
+            </s:stroke>
+        </s:Rect>
+        <s:Path id="path"
+            x="5" y="4"
+            data="M 0 4 L 7 7.5 7 0 Z">
+            <s:fill>
+                <s:SolidColor color="#333333"/>
+            </s:fill>
+        </s:Path>
+    </s:Group>
+    <s:transitions>
+        <s:Transition fromState="disabled"
+            toState="up"
+            autoReverse="true">
+            <s:Parallel>
+                <s:Parallel target="{group0}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+                <s:Parallel target="{group3}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+            </s:Parallel>
+        </s:Transition>
+    </s:transitions>
+
+</s:Skin>

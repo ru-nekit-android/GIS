@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esri:Map 
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:s="library://ns.adobe.com/flex/spark"
+	xmlns:mx="library://ns.adobe.com/flex/mx"
+	xmlns:esri="http://www.esri.com/2008/ags"
+	xmlns:model="com.esri.model.*"
+	xmlns:views="com.esri.views.*"
+	xmlns:controllers="com.esri.controllers.*"
+	xmlns:layer="ru.nekit.gis.model.map.layer.*"
+	openHandCursorVisible="false"
+	rubberbandZoomEnabled="false"
+	logoVisible="false"
+	zoomSliderVisible="false"
+	wrapAround180="false"
+	creationComplete="creationCompleteHandler(event)"
+	>
+	
+	<fx:Declarations>
+		<model:Model id="model"/>
+		<controllers:ClearController id="clearController" model="{model}"/>
+		<controllers:LatLonController id="latLngController" model="{model}"/>
+		<controllers:LocateController id="locateController"
+									  map="{this}"
+									  model="{model}"/>
+		<controllers:RouteController id="routeController"
+									 map="{this}"
+									 model="{model}"/>
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.esri.ags.Graphic;
+			import com.esri.ags.geometry.MapPoint;
+			import com.esri.ags.geometry.WebMercatorMapPoint;
+			import com.esri.ags.symbols.Symbol;
+			
+			import mx.core.UIComponent;
+			import mx.events.FlexEvent;
+			import mx.rpc.IResponder;
+			
+			public function setCenter(lat:Number, lng:Number, zoomLevel:int = 14):void
+			{
+				centerAt(new WebMercatorMapPoint(lng, lat));
+				level = zoomLevel;
+			}
+			
+			public function addSymbol(lat:Number, lng:Number, symbol:Symbol = null, toolTip:String = null ):Graphic
+			{
+				return latLngController.addSymbol(lat, lng, symbol, toolTip);
+			}
+			
+			public function addLine(points:Array, symbol:Symbol = null):Graphic
+			{
+				return latLngController.addLine(points, symbol);
+			}
+			
+			public function addPolygon(points:Array /*<MapPoint>*/, symbol:Symbol = null):Graphic
+			{
+				return latLngController.addPolygon(points, symbol);
+			}
+			
+			public function addressToLocation(address:String, mapLevel:int = -1):void
+			{
+				locateController.addressToLocation(address, mapLevel);
+			}
+			
+			public function locationToAddress(mapPoint:MapPoint, distance:Number = 30.0):void
+			{
+				locateController.locationToAddress(mapPoint, distance);
+			}
+			
+			public function clearAll():void
+			{
+				clearController.clearAll();
+			}
+			
+			public function clearPolygons():void
+			{
+				clearController.clearPolygons();
+			}
+			
+			public function clearPolylines():void
+			{
+				clearController.clearPolylines();
+			}
+			
+			public function clearPoints():void
+			{
+				clearController.clearPoints();
+			}
+			
+			public function route(source:Array = null, zoomFactor:Number = 2.0, responder:IResponder = null):void
+			{
+				routeController.route(source, zoomFactor, responder);
+			}
+			
+			public function showInfoWindow(lat:Number, lon:Number, content:UIComponent, label:String = null):void
+			{
+				infoWindowContent = content;
+				infoWindow.label = label;
+				infoWindow.show(new WebMercatorMapPoint(lon, lat));
+			}
+			
+			public function hideInfoWindow():void
+			{
+				infoWindow.hide();
+			}
+			
+			private function creationCompleteHandler(event:FlexEvent):void
+			{
+				cacheAsBitmap = true;
+				cacheAsBitmapMatrix = new Matrix;
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<layer:OfflineOpenStreetMapLayer width="100%" height="100%" horizontalCenter="0" verticalCenter="0"/>
+	
+	<esri:GraphicsLayer id="polygonLayer" graphicProvider="{model.polygonArrCol}">
+		<esri:symbol>
+			<esri:SimpleFillSymbol id="polygonSymbol"
+								   alpha="0.5"
+								   color="red">
+				<esri:outline>
+					<esri:SimpleLineSymbol width="2"
+										   alpha="1"
+										   color="red"/>
+				</esri:outline>
+			</esri:SimpleFillSymbol>
+		</esri:symbol>
+	</esri:GraphicsLayer>
+	
+	<esri:GraphicsLayer id="polylineLayer" graphicProvider="{model.polylineArrCol}">
+		<esri:symbol>
+			<esri:CartographicLineSymbol id="polylineSymbol"
+										 width="8"
+										 alpha="0.5"
+										 cap="butt"
+										 color="green"/>
+		</esri:symbol>
+	</esri:GraphicsLayer>
+	
+	<esri:GraphicsLayer id="pointLayer" graphicProvider="{model.pointArrCol}">
+		<esri:symbol>
+			<views:BitmapSymbol id="pointSymbol"
+								hotSpotX="10"
+								hotSpotY="32"
+								source="@Embed('/marker.png')"/>
+		</esri:symbol>
+	</esri:GraphicsLayer>
+	
+</esri:Map>

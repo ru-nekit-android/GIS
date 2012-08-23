@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:List xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		skinClass="com.flexpad.skin.ListSkin">
+	<fx:Metadata> 
+		[Style(name="backgroundColor",type="uint",format="Color")] 
+		[Style(name="backgroundAlpha",type="Number", minValue="0.0", maxValue="1.0")]
+	</fx:Metadata>
+	<fx:Script>
+		<![CDATA[
+			[Bindable]
+			public var hintField:String = "hint";
+			
+			[Bindable]
+			public var iconField:String = "icon";
+		]]>
+	</fx:Script>
+</s:List>

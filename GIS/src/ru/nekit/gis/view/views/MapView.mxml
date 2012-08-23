@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<components:View 
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark"
+	xmlns:components="spark.components.*"
+	xmlns:esri="http://www.esri.com/2008/ags"
+	xmlns:map="ru.nekit.gis.view.map.*"
+	title="Карта"
+	>
+	
+	<components:actionContent>
+		<s:Button label="Выход" id="exit"/>
+	</components:actionContent>
+	
+	<s:HGroup id="menu" width="100%" height="60" gap="4" depth="3" bottom="0">
+		<components:ViewMenuItem id="minusZoom" label="-" width="100%"/>
+		<components:ViewMenuItem id="plusZoom" label="+" width="100%"/>
+		<components:ViewMenuItem id="positionUser" width="100%" icon="@Embed(source='location.png')"/>
+	</s:HGroup>
+	
+	<map:AGSMap id="map"/>
+	
+</components:View>

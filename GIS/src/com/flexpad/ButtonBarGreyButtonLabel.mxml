@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Label 
+    currentState="normal"
+    styleName="buttonBarGreyButtonLabel"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx">
+    <s:states>
+        <s:State name="normal"/>
+        <s:State name="selected"/>
+    </s:states>
+    <s:filters.normal>
+        <s:DropShadowFilter 
+            color="0xFFFFFF"
+            angle="90"
+            alpha="0.55"
+            distance="1"
+            blurX="1"
+            blurY="1"/>
+    </s:filters.normal>
+    <s:filters.selected>
+        <s:DropShadowFilter 
+            color="0x000000"
+            angle="-90"
+            alpha="0.55"
+            distance="1"
+            blurX="1"
+            blurY="1"/>
+    </s:filters.selected>
+</s:Label>

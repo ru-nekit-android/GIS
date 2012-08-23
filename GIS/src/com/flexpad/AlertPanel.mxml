@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Panel xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    xmlns:flexpad="com.flexpad.*"
+    skinClass="com.flexpad.skin.AlertPanelSkin">
+    <fx:Script>
+        <![CDATA[
+            [Bindable]
+            public var text:String;
+        ]]>
+    </fx:Script>
+    <flexpad:AlertPanelTextLabel 
+        horizontalCenter="0"
+        verticalCenter="0"
+        text="{text}"/>
+
+    <s:controlBarLayout>
+        <s:HorizontalLayout 
+            horizontalAlign="center"
+            paddingBottom="7"
+            paddingLeft="10"
+            paddingRight="10"
+            paddingTop="7"
+            gap="10"/>
+    </s:controlBarLayout>
+    <s:controlBarContent>
+        <flexpad:AlertPanelButton 
+            width="100%"
+            label="Cancel"/>
+        <flexpad:AlertPanelButton 
+            width="100%"
+            label="OK"/>
+    </s:controlBarContent>
+</s:Panel>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ButtonBarButton xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    skinClass="com.flexpad.skin.TabBarBlackButtonSkin">
+    <fx:Script>
+        <![CDATA[
+            [Bindable]
+            public var iconField:String;
+
+            [Bindable]
+            public var iconSelectedField:String;
+
+            [Bindable]
+            public var icon:Object;
+
+            [Bindable]
+            public var iconSelected:Object;
+
+            override public function set data(value:Object):void
+            {
+                super.data = value;
+                if (value)
+                {
+					trace(data);
+                    if (data.hasOwnProperty(iconField))
+                        icon = data[iconField];
+                    if (data.hasOwnProperty(iconField))
+                        iconSelected = data[iconSelectedField];
+					
+					trace(iconField,data[iconField]);
+                }
+
+            }
+        ]]>
+    </fx:Script>
+</s:ButtonBarButton>

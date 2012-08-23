@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:TabBar 
+    iconField="icon"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    skinClass="com.flexpad.skin.TabBarBlackSkin">
+    <fx:Script>
+        <![CDATA[
+            [Bindable]
+            override public function get iconField():String
+            {
+                return super.iconField;
+            }
+
+            override public function set iconField(value:String):void
+            {
+                super.iconField = value;
+            }
+
+            [Bindable]
+            public var iconSelectedField:String = "iconSelected";
+        ]]>
+    </fx:Script>
+</s:TabBar>

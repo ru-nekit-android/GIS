@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+ADOBE SYSTEMS INCORPORATED
+Copyright 2008 Adobe Systems Incorporated
+All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file
+in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<!--- The default skin class for a Spark ToggleButton component.
+
+@see spark.components.ToggleButton
+
+@langversion 3.0
+@playerversion Flash 10
+@playerversion AIR 1.5
+@productversion Flex 4
+-->
+<s:SparkSkin 
+    minHeight="21"
+    minWidth="21"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:fb="http://ns.adobe.com/flashbuilder/2009"
+    alpha.disabledStates="0.5"
+    xmlns:flexpad="com.flexpad.*">
+    <fx:Metadata>[HostComponent("com.flexpad.LargeButtonBarGreyButton")]</fx:Metadata>
+
+    <!-- host component -->
+    <fx:Script fb:purpose="styling">
+        /* Define the skin elements that should not be colorized.
+        For toggle button, the graphics are colorized but the label is not. */
+        static private const exclusions:Array = [ "labelDisplay" ];
+
+        /**
+         * @private
+         */
+        override public function get colorizeExclusions():Array
+        {
+            return exclusions;
+        }
+
+        /**
+         * @private
+         */
+        override protected function initializationComplete():void
+        {
+            useChromeColor = true;
+            super.initializationComplete();
+        }
+
+        /**
+         * @private
+         */
+        override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+        {
+            super.updateDisplayList(unscaledWidth, unscaledHeight);
+        }
+    </fx:Script>
+
+    <!-- states -->
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="over"
+            stateGroups="overStates"/>
+        <s:State name="down"
+            stateGroups="downStates"/>
+        <s:State name="disabled"
+            stateGroups="disabledStates"/>
+        <s:State name="upAndSelected"
+            stateGroups="selectedStates, selectedUpStates"/>
+        <s:State name="overAndSelected"
+            stateGroups="overStates, selectedStates"/>
+        <s:State name="downAndSelected"
+            stateGroups="downStates, selectedStates"/>
+        <s:State name="disabledAndSelected"
+            stateGroups="selectedUpStates, disabledStates, selectedStates"/>
+    </s:states>
+
+    <!-- layer 2: fill -->
+    <!--- @private -->
+    <s:Rect id="fill"
+        left="0" right="0" top="0" bottom="0"
+        topLeftRadiusX="{hostComponent.type=='first'?7:0}"
+        topLeftRadiusY="{hostComponent.type=='first'?7:0}"
+        bottomLeftRadiusX="{hostComponent.type=='first'?7:0}"
+        bottomLeftRadiusY="{hostComponent.type=='first'?7:0}"
+        topRightRadiusX="{hostComponent.type=='last'?7:0}"
+        topRightRadiusY="{hostComponent.type=='last'?7:0}"
+        bottomRightRadiusX="{hostComponent.type=='last'?7:0}"
+        bottomRightRadiusY="{hostComponent.type=='last'?7:0}">
+        <s:fill>
+            <s:LinearGradient rotation="-90">
+                <s:GradientEntry 
+                    color="0xcacaca"
+                    ratio="0"/>
+                <s:GradientEntry 
+                    color="0xd0d0d0"
+                    ratio="0.26"/>
+                <s:GradientEntry 
+                    color="0xe1e1e1"
+                    ratio="0.5"/>
+                <s:GradientEntry 
+                    color="0xf2f2f2"
+                    ratio="0.75"/>
+                <s:GradientEntry 
+                    color="0xfbfbfb"
+                    ratio="0.99"/>
+                <s:GradientEntry 
+                    color="0x7b7b7b"
+                    ratio="1"/>
+            </s:LinearGradient>
+        </s:fill>
+        <s:fill.selectedStates>
+            <s:LinearGradient rotation="-90">
+                <s:GradientEntry 
+                    color="0x00040c"
+                    ratio="0"/>
+                <s:GradientEntry 
+                    color="0x3c77da"
+                    ratio="0.02"/>
+                <s:GradientEntry 
+                    color="0x407ee6"
+                    ratio="0.96"/>
+                <s:GradientEntry 
+                    color="0x234a8f"
+                    ratio="1"/>
+            </s:LinearGradient>
+        </s:fill.selectedStates>
+        <s:filters.selectedStates>
+            <s:DropShadowFilter 
+                color="0"
+                angle="90"
+                alpha="0.15"
+                distance="4"
+                blurX="5"
+                blurY="5"
+                inner="true"/>
+        </s:filters.selectedStates>
+    </s:Rect>
+
+    <!-- layer 3: border - put on top of the fill so it doesn't disappear when scale is less than 1 -->
+    <!--- @private -->
+    <s:Rect id="border"
+        left="0" right="0" top="0" bottom="0"
+        topLeftRadiusX="{hostComponent.type=='first'?7:0}"
+        topLeftRadiusY="{hostComponent.type=='first'?7:0}"
+        bottomLeftRadiusX="{hostComponent.type=='first'?7:0}"
+        bottomLeftRadiusY="{hostComponent.type=='first'?7:0}"
+        topRightRadiusX="{hostComponent.type=='last'?7:0}"
+        topRightRadiusY="{hostComponent.type=='last'?7:0}"
+        bottomRightRadiusX="{hostComponent.type=='last'?7:0}"
+        bottomRightRadiusY="{hostComponent.type=='last'?7:0}"
+        excludeFrom="selectedStates">
+        <s:stroke>
+            <s:SolidColorStroke 
+                color="0x9b9b9b"
+                weight="1"/>
+        </s:stroke>
+    </s:Rect>
+
+    <!-- layer 4: highlight -->
+    <s:Rect id="highlight"
+        left="0" right="0" top="{height/2}" bottom="0"
+        topLeftRadiusX="{hostComponent.type=='first'?7:0}"
+        topLeftRadiusY="{hostComponent.type=='first'?7:0}"
+        bottomLeftRadiusX="{hostComponent.type=='first'?7:0}"
+        bottomLeftRadiusY="{hostComponent.type=='first'?7:0}"
+        topRightRadiusX="{hostComponent.type=='last'?7:0}"
+        topRightRadiusY="{hostComponent.type=='last'?7:0}"
+        bottomRightRadiusX="{hostComponent.type=='last'?7:0}"
+        bottomRightRadiusY="{hostComponent.type=='last'?7:0}"
+        includeIn="selectedStates"
+        alpha="0.4">
+        <s:fill>
+            <s:LinearGradient rotation="-90">
+                <s:GradientEntry 
+                    color="0xffffff"
+                    ratio="0"
+                    alpha="1"/>
+                <s:GradientEntry 
+                    color="0xffffff"
+                    ratio="1"
+                    alpha="0.15"/>
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+
+    <!-- layer 5: shadow -->
+    <s:Rect 
+        width="7"
+        left="{hostComponent.type=='last'?0:null}" right="{hostComponent.type!='last'?0:null}" top="0" bottom="0"
+        alpha="0.2"
+        includeIn="selectedStates">
+        <s:fill>
+            <s:LinearGradient rotation="{hostComponent.type=='last'?0:180}">
+                <s:GradientEntry 
+                    color="0x000000"
+                    alpha="0.65"/>
+                <s:GradientEntry 
+                    color="0x000000"
+                    alpha="0"/>
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+
+    <!-- layer 6: text -->
+    <!--- @copy spark.components.supportClasses.ButtonBase#labelDisplay -->
+    <flexpad:LargeButtonBarGreyButtonLabel id="labelDisplay"
+        left="30" right="30" top="9" bottom="9"
+        horizontalCenter="0"
+        textAlign="center"
+        verticalAlign="middle"
+        verticalCenter="1"
+        currentState="normal"
+        currentState.selectedStates="selected"
+        maxDisplayedLines="1"/>
+
+    <!-- layer 7: keylines -->
+    <s:Rect 
+        width="1"
+        left="{hostComponent.type=='first'?null:0}" right="{hostComponent.type=='first'?0:null}" top="0" bottom="0"
+        includeIn="selectedStates">
+        <s:fill>
+            <s:SolidColor color="0x28529a"/>
+        </s:fill>
+    </s:Rect>
+
+    <s:Rect 
+        width="1"
+        right="0" top="0" bottom="0"
+        includeIn="selectedStates"
+        visible="{hostComponent.type=='middle'}">
+        <s:fill>
+            <s:SolidColor color="0x28529a"/>
+        </s:fill>
+    </s:Rect>
+
+</s:SparkSkin>

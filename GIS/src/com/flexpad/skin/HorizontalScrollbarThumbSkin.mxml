@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:d="http://ns.adobe.com/fxg/2008/dt">
+
+    <fx:Metadata>
+    	[HostComponent("spark.components.Button")]
+    </fx:Metadata>
+
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="over"/>
+        <s:State name="down"/>
+        <s:State name="disabled"/>
+    </s:states>
+
+    <!-- background -->
+    <s:Rect id="rect9"
+        left.disabled="0" left.down="0" left.over="0" left.up="0" right.disabled="0" right.down="0" right.over="0" right.up="0" top.disabled="0" top.down="0" top.over="0" top.up="0" bottom.disabled="0" bottom.down="0" bottom.over="0" bottom.up="0"
+        radiusX="8"
+        includeIn="up,over,down,disabled">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry 
+                    color="0x005ECA"
+                    alpha="1.0"
+                    ratio="0"/>
+                <s:GradientEntry 
+                    color="0xACE7FF"
+                    alpha="1"
+                    ratio="1"/>
+            </s:LinearGradient>
+        </s:fill>
+        <s:stroke>
+            <s:LinearGradientStroke weight="1"
+                caps="none"
+                joints="miter"
+                miterLimit="4"
+                rotation="90">
+                <s:GradientEntry 
+                    color="#250f73"
+                    alpha="1.0"
+                    ratio="0"/>
+                <s:GradientEntry 
+                    color="#666666"
+                    alpha="1.0"
+                    ratio="1"/>
+            </s:LinearGradientStroke>
+        </s:stroke>
+    </s:Rect>
+    <s:Rect id="rect10"
+        height="5"
+        left="4" left.disabled="3" left.down="3" left.over="3" left.up="3" right="6" right.disabled="4" right.down="4" right.over="4" right.up="4" top="2" top.disabled="2" top.down="2" top.over="2" top.up="2"
+        radiusX="5"
+        alpha="0.5"
+        includeIn="up,over,down,disabled">
+        <s:fill>
+            <s:SolidColor color="0xFFFFFF"/>
+        </s:fill>
+    </s:Rect>
+    <s:Rect id="rect11"
+        height="4"
+        left="4" right="6" bottom="3"
+        radiusX="5"
+        alpha="0.2">
+        <s:fill>
+            <s:SolidColor color="0xFFFFFF"/>
+        </s:fill>
+    </s:Rect>
+    <!-- <s:transitions>
+         <s:Transition fromState="over" toState="up" autoReverse="true">
+             <s:Parallel>
+                 <s:Parallel target="{rect6}">
+                     <s:Fade duration="0"/>
+                 </s:Parallel>
+                 <s:Parallel target="{rect8}">
+                     <s:Fade duration="0"/>
+                 </s:Parallel>
+                 <s:Parallel target="{rect7}">
+                     <s:Fade duration="0"/>
+                 </s:Parallel>
+                 <s:Parallel target="{rect10}">
+                     <s:Fade duration="0"/>
+                 </s:Parallel>
+                 <s:Parallel target="{rect11}">
+                     <s:Fade duration="0"/>
+                 </s:Parallel>
+                 <s:Parallel target="{rect9}">
+                     <s:Fade duration="0"/>
+                 </s:Parallel>
+             </s:Parallel>
+         </s:Transition>
+         <s:Transition fromState="up" toState="over" autoReverse="true">
+             <s:Parallel>
+                 <s:Parallel target="{rect6}">
+                     <s:Fade duration="0"/>
+                 </s:Parallel>
+                 <s:Parallel target="{rect7}">
+                     <s:Fade duration="0"/>
+                 </s:Parallel>
+                 <s:Parallel target="{rect8}">
+                     <s:Fade duration="0"/>
+                 </s:Parallel>
+                 <s:Parallel target="{rect9}">
+                     <s:Fade duration="0"/>
+                 </s:Parallel>
+                 <s:Parallel target="{rect10}">
+                     <s:Fade duration="0"/>
+                 </s:Parallel>
+                 <s:Parallel target="{rect11}">
+                     <s:Fade duration="0"/>
+                 </s:Parallel>
+             </s:Parallel>
+         </s:Transition>
+     </s:transitions>-->
+
+    <!-- Gripper -->
+
+</s:Skin>

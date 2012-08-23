@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ItemRenderer 
+    width="100%"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    autoDrawBackground="true"
+    xmlns:flexpad="com.flexpad.*"
+	minHeight="0">
+
+    <fx:Script>
+        <![CDATA[
+			[Bindable]
+			public var hintField:String;
+			[Bindable]
+			public var iconField:String;
+			
+            [Bindable]
+            override public function get selected():Boolean
+            {
+                return super.selected;
+            }
+
+            override public function set selected(value:Boolean):void
+            {
+                super.selected = value;
+            }
+			
+			override public function get data():Object
+			{
+				return super.data;
+			}
+			
+			override public function set data(value:Object):void
+			{
+				super.data = value;
+				
+				if(data){
+					if(hintField){
+						hintLabelHolder.text = data[hintField];
+					}
+					if(iconField){
+						iconHolder.source = data[iconField];
+					}
+					
+				}
+			}
+			
+        ]]>
+    </fx:Script>
+	
+	<s:states>
+		<s:State name="normal" />
+		<s:State name="hovered" stateGroups="hoveredStates" />
+		<s:State name="selected" stateGroups="selectedStates" />
+		<s:State name="normalAndShowsCaret"/>
+		<s:State name="hoveredAndShowsCaret" stateGroups="hoveredStates"/>
+		<s:State name="selectedAndShowsCaret" stateGroups="selectedStates"/>
+	</s:states>
+	
+	<s:Rect top="0" bottom="0" left="0" right="0">
+		<s:fill>
+			<s:SolidColor alpha="0" />
+		</s:fill>
+		<s:fill.hoveredStates>
+			<s:LinearGradient rotation="-90">
+				<s:GradientEntry color="0x015fe6" alpha="0.2" />
+				<s:GradientEntry color="0x058cf5" alpha="0.2" />
+			</s:LinearGradient>
+		</s:fill.hoveredStates>
+		<s:fill.selectedStates>
+			<s:LinearGradient rotation="-90">
+				<s:GradientEntry color="0x015fe6" />
+				<s:GradientEntry color="0x058cf5" />
+			</s:LinearGradient>
+		</s:fill.selectedStates>
+	</s:Rect>
+
+	<s:BitmapImage id="iconHolder" smooth="true" scaleMode="letterbox" left="7" top="7" bottom="7" />
+
+    <flexpad:ListItemRendererLabel 
+        left="{iconHolder.source?17+iconHolder.width:10}" right="10" top="15" bottom="15"
+        currentState="{selected?'selected':'normal'}"
+        text="{label}"/>
+	
+	<flexpad:ListItemRendererHintLabel id="hintLabelHolder" 
+		right="10" top="15" bottom="15"
+		currentState="{selected?'selected':'normal'}"/>
+
+    <s:Rect 
+        height="1"
+        left="0" right="0" bottom="2">
+        <s:fill>
+            <s:SolidColor 
+                color="0x181919"
+                alpha="0.08"/>
+        </s:fill>
+    </s:Rect>
+
+    <s:Rect 
+        height="1"
+        left="0" right="0" bottom="1">
+        <s:fill>
+            <s:SolidColor 
+                color="0xFFFFFF"
+                alpha="0.25"/>
+        </s:fill>
+    </s:Rect>
+
+</s:ItemRenderer>

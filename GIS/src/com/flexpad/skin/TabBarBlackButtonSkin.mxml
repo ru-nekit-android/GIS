@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    ADOBE SYSTEMS INCORPORATED
+    Copyright 2008 Adobe Systems Incorporated
+    All Rights Reserved.
+
+    NOTICE: Adobe permits you to use, modify, and distribute this file
+    in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<!--- The default skin class for a Spark ToggleButton component.
+
+     @see spark.components.ToggleButton
+
+      @langversion 3.0
+      @playerversion Flash 10
+      @playerversion AIR 1.5
+      @productversion Flex 4
+-->
+<s:SparkSkin 
+    minHeight="21"
+    minWidth="21"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:fb="http://ns.adobe.com/flashbuilder/2009"
+    alpha.disabledStates="0.5"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    xmlns:flexpad="com.flexpad.*">
+    <fx:Metadata>[HostComponent("com.flexpad.TabBarBlackButton")]</fx:Metadata>
+
+    <!-- host component -->
+    <!-- states -->
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="over"
+            stateGroups="overStates"/>
+        <s:State name="down"
+            stateGroups="downStates"/>
+        <s:State name="disabled"
+            stateGroups="disabledStates"/>
+        <s:State name="upAndSelected"
+            stateGroups="selectedStates, selectedUpStates"/>
+        <s:State name="overAndSelected"
+            stateGroups="overStates, selectedStates"/>
+        <s:State name="downAndSelected"
+            stateGroups="downStates, selectedStates"/>
+        <s:State name="disabledAndSelected"
+            stateGroups="selectedUpStates, disabledStates, selectedStates"/>
+    </s:states>
+
+    <!-- layer 2: fill -->
+    <!--- @private -->
+    <s:Rect id="fill"
+        left="1" right="1" top="1" bottom="1"
+        radiusX="2"
+        radiusY="2">
+        <s:fill>
+            <s:SolidColor 
+                color="0xFFFFFF"
+                alpha="0"
+                alpha.selectedStates="0.14"/>
+        </s:fill>
+    </s:Rect>
+
+    <s:Group id="iconHolder"
+        height="30"
+        top="2"
+        horizontalCenter="0">
+        <mx:Image 
+            verticalCenter="0"
+            source="{hostComponent.icon}"
+            source.selectedStates="{hostComponent.iconSelected}"/>
+    </s:Group>
+
+
+    <!-- layer 8: text -->
+    <!--- @copy spark.components.supportClasses.ButtonBase#labelDisplay -->
+    <flexpad:TabBarBlackButtonLabel id="labelDisplay"
+        left="25" right="25" top="{4+iconHolder.height}" bottom="2"
+        textAlign="center"
+        verticalAlign="middle"
+        currentState="normal"
+        currentState.selectedStates="selected"
+        maxDisplayedLines="1"/>
+
+</s:SparkSkin>

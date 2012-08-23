@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:fx="http://ns.adobe.com/mxml/2009">
+    <fx:Metadata>[HostComponent("spark.components.Button")]</fx:Metadata>
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="over"/>
+        <s:State name="down"/>
+        <s:State name="disabled"/>
+    </s:states>
+    <s:Ellipse id="ellipse2"
+        x="2" y="2" width="9" height="5"
+        alpha="0.3"
+        includeIn="over">
+        <s:fill>
+            <s:SolidColor color="0xFFFFFF"/>
+        </s:fill>
+    </s:Ellipse>
+    <s:Ellipse id="ellipse3"
+        x="2" y="8" width="9" height="4"
+        alpha="0.1"
+        includeIn="over">
+        <s:fill>
+            <s:SolidColor color="0xFFFFFF"/>
+        </s:fill>
+    </s:Ellipse>
+    <s:Ellipse id="ellipse4"
+        x="2" y="2" width="9" height="5"
+        alpha="0.3"
+        includeIn="down">
+        <s:fill>
+            <s:SolidColor color="0xFFFFFF"/>
+        </s:fill>
+    </s:Ellipse>
+    <s:Ellipse id="ellipse5"
+        x="2" y="8" width="9" height="4"
+        alpha="0.1"
+        includeIn="down">
+        <s:fill>
+            <s:SolidColor color="0xFFFFFF"/>
+        </s:fill>
+    </s:Ellipse>
+    <s:Group id="group4"
+        left="0" right="0" top="0" bottom="0"
+        includeIn="up">
+        <s:Ellipse id="ellipse1"
+            x="2" y="2" width="9" height="5"
+            alpha="0.3">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Ellipse>
+        <s:Ellipse id="ellipse0"
+            x="2" y="8" width="9" height="4"
+            alpha="0.1">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Ellipse>
+        <s:Rect id="rect2"
+            left="0.5" right="0.5" top="0.5" bottom="0.5"
+            radiusX="9">
+            <s:fill>
+                <s:LinearGradient rotation="90">
+                    <s:GradientEntry 
+                        color="0xA3C5E8"
+                        alpha="1.0"
+                        ratio="0.027450980392156862"/>
+                    <s:GradientEntry 
+                        color="#4096db"
+                        alpha="1.0"
+                        ratio="0.27450980392156865"/>
+                    <s:GradientEntry 
+                        color="#4096db"
+                        alpha="1.0"
+                        ratio="0.3411764705882353"/>
+                    <s:GradientEntry 
+                        color="#4096db"
+                        alpha="1.0"
+                        ratio="0.43137254901960786"/>
+                    <s:GradientEntry 
+                        color="#4096db"
+                        alpha="1.0"
+                        ratio="0.5450980392156862"/>
+                    <s:GradientEntry 
+                        color="0x98DAFF"
+                        alpha="1.0"
+                        ratio="1"/>
+                </s:LinearGradient>
+            </s:fill>
+            <s:stroke>
+                <s:SolidColorStroke 
+                    color="#666666"
+                    caps="none"
+                    joints="miter"
+                    miterLimit="4"
+                    weight="1"/>
+            </s:stroke>
+        </s:Rect>
+        <s:Ellipse id="ellipse12"
+            y="2" height="8"
+            left="4" right="4"
+            alpha="0.3">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Ellipse>
+        <s:Ellipse id="ellipse13"
+            height="4"
+            left="5" right="5" bottom="2"
+            alpha="0.1">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Ellipse>
+    </s:Group>
+    <s:Group id="group0"
+        left="0" right="0" top="0" bottom="0"
+        includeIn="over">
+        <s:Ellipse id="ellipse11"
+            x="2" y="8" width="9" height="4"
+            alpha="0.1">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Ellipse>
+        <s:Rect id="rect0"
+            left="0.5" right="0.5" top="0.5" bottom="0.5"
+            radiusX="9">
+            <s:fill>
+                <s:LinearGradient rotation="90">
+                    <s:GradientEntry 
+                        color="0xA3C5E8"
+                        alpha="1.0"
+                        ratio="0.027450980392156862"/>
+                    <s:GradientEntry 
+                        color="#4096db"
+                        alpha="1.0"
+                        ratio="0.27450980392156865"/>
+                    <s:GradientEntry 
+                        color="#4096db"
+                        alpha="1.0"
+                        ratio="0.3411764705882353"/>
+                    <s:GradientEntry 
+                        color="#4096db"
+                        alpha="1.0"
+                        ratio="0.43137254901960786"/>
+                    <s:GradientEntry 
+                        color="#4096db"
+                        alpha="1.0"
+                        ratio="0.5450980392156862"/>
+                    <s:GradientEntry 
+                        color="0x98DAFF"
+                        alpha="1.0"
+                        ratio="1"/>
+                </s:LinearGradient>
+            </s:fill>
+            <s:stroke>
+                <s:SolidColorStroke 
+                    color="#666666"
+                    caps="none"
+                    joints="miter"
+                    miterLimit="4"
+                    weight="1"/>
+            </s:stroke>
+        </s:Rect>
+        <s:Ellipse id="ellipse6"
+            y="2" height="8"
+            left="4" right="4"
+            alpha="0.3">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Ellipse>
+        <s:Ellipse id="ellipse8"
+            height="4"
+            left="5" right="5" bottom="2"
+            alpha="0.1">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Ellipse>
+    </s:Group>
+    <s:Group id="group2"
+        left="0" right="0" top="0" bottom="0"
+        includeIn="down">
+        <s:Ellipse id="ellipse9"
+            x="2" y="8" width="9" height="4"
+            alpha="0.1">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Ellipse>
+    </s:Group>
+    <s:Group id="group1"
+        left="0" right="0" top="0" bottom="0"
+        includeIn="disabled">
+        <s:Ellipse id="ellipse7"
+            x="2" y="8" width="9" height="4"
+            alpha="0.1">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Ellipse>
+        <s:Rect id="rect3"
+            left="0.5" right="0.5" top="0.5" bottom="0.5"
+            radiusX="9">
+            <s:fill>
+                <s:LinearGradient rotation="90">
+                    <s:GradientEntry 
+                        color="0xA3C5E8"
+                        alpha="1.0"
+                        ratio="0.027450980392156862"/>
+                    <s:GradientEntry 
+                        color="#4096db"
+                        alpha="1.0"
+                        ratio="0.27450980392156865"/>
+                    <s:GradientEntry 
+                        color="#4096db"
+                        alpha="1.0"
+                        ratio="0.3411764705882353"/>
+                    <s:GradientEntry 
+                        color="#4096db"
+                        alpha="1.0"
+                        ratio="0.43137254901960786"/>
+                    <s:GradientEntry 
+                        color="#4096db"
+                        alpha="1.0"
+                        ratio="0.5450980392156862"/>
+                    <s:GradientEntry 
+                        color="0x98DAFF"
+                        alpha="1.0"
+                        ratio="1"/>
+                </s:LinearGradient>
+            </s:fill>
+            <s:stroke>
+                <s:SolidColorStroke 
+                    color="#666666"
+                    caps="none"
+                    joints="miter"
+                    miterLimit="4"
+                    weight="1"/>
+            </s:stroke>
+        </s:Rect>
+        <s:Ellipse id="ellipse15"
+            y="2" height="8"
+            left="4" right="4"
+            alpha="0.3">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Ellipse>
+        <s:Ellipse id="ellipse16"
+            height="4"
+            left="5" right="5" bottom="2"
+            alpha="0.1">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Ellipse>
+    </s:Group>
+    <s:Rect id="rect1"
+        left="0.5" right="0.5" top="0.5" bottom="0.5"
+        radiusX="9"
+        includeIn="down">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry 
+                    color="0xA3C5E8"
+                    alpha="1.0"
+                    ratio="0.027450980392156862"/>
+                <s:GradientEntry 
+                    color="#4096db"
+                    alpha="1.0"
+                    ratio="0.27450980392156865"/>
+                <s:GradientEntry 
+                    color="#4096db"
+                    alpha="1.0"
+                    ratio="0.3411764705882353"/>
+                <s:GradientEntry 
+                    color="#4096db"
+                    alpha="1.0"
+                    ratio="0.43137254901960786"/>
+                <s:GradientEntry 
+                    color="#4096db"
+                    alpha="1.0"
+                    ratio="0.5450980392156862"/>
+                <s:GradientEntry 
+                    color="0x98DAFF"
+                    alpha="1.0"
+                    ratio="1"/>
+            </s:LinearGradient>
+        </s:fill>
+        <s:stroke>
+            <s:SolidColorStroke 
+                color="#666666"
+                caps="none"
+                joints="miter"
+                miterLimit="4"
+                weight="1"/>
+        </s:stroke>
+    </s:Rect>
+    <s:Ellipse id="ellipse10"
+        y="2" height="8"
+        left="4" right="4"
+        alpha="0.3"
+        includeIn="down">
+        <s:fill>
+            <s:SolidColor color="0xFFFFFF"/>
+        </s:fill>
+    </s:Ellipse>
+    <s:Ellipse id="ellipse14"
+        height="4"
+        left="5" right="5" bottom="2"
+        alpha="0.1"
+        includeIn="down">
+        <s:fill>
+            <s:SolidColor color="0xFFFFFF"/>
+        </s:fill>
+    </s:Ellipse>
+    <s:transitions>
+        <s:Transition autoReverse="true"
+            fromState="over"
+            toState="up">
+            <s:Parallel>
+                <s:Parallel target="{ellipse1}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+                <s:Parallel target="{ellipse0}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+                <s:Parallel target="{ellipse2}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+                <s:Parallel target="{ellipse3}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+            </s:Parallel>
+        </s:Transition>
+        <s:Transition fromState="disabled"
+            toState="up"
+            autoReverse="true">
+            <s:Parallel>
+                <s:Parallel target="{group4}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+                <s:Parallel target="{group1}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+            </s:Parallel>
+        </s:Transition>
+        <s:Transition fromState="up"
+            toState="over"
+            autoReverse="true">
+            <s:Parallel>
+                <s:Parallel target="{ellipse2}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+                <s:Parallel target="{ellipse3}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+                <s:Parallel target="{group4}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+                <s:Parallel target="{group0}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+            </s:Parallel>
+        </s:Transition>
+    </s:transitions>
+</s:Skin>

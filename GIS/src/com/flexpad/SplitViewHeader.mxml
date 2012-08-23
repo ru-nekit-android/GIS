@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SkinnableContainer xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    skinClass="com.flexpad.skin.SplitViewHeaderSkin"
+    xmlns:flexpad="com.flexpad.*"
+	currentState="{backEnable?'backEnabled':'normal'}"
+	height="45">
+    <fx:Script>
+        <![CDATA[
+            [Bindable]
+            public var label:String;
+			[Bindable]
+            public var backEnable:Boolean = false;
+			
+
+			protected function backClickHandler(event:MouseEvent):void
+			{
+				dispatchEvent(new Event("backClick"));
+			}
+
+        ]]>
+    </fx:Script>
+	<fx:Metadata>
+		[Event(name="backClick", type="flash.events.Event")]
+	</fx:Metadata>
+    <fx:Declarations>
+        <!-- Place non-visual elements (e.g., services, value objects) here -->
+    </fx:Declarations>
+	<s:states>
+		<s:State name="normal" />
+		<s:State name="backEnabled" />
+	</s:states>
+    <flexpad:BarGreyLabel 
+        horizontalCenter="0"
+        verticalCenter="0"
+        text="{label}"/>
+    <flexpad:BackButtonGrey 
+        left="7"
+        verticalCenter="0"
+        label="Back"
+		includeIn="backEnabled"
+		click="backClickHandler(event)"
+		buttonMode="true"/>
+</s:SkinnableContainer>

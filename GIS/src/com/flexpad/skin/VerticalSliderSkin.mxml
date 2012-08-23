@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin 
+    minHeight="101"
+    minWidth="14"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    alpha.disabled="0.5">
+
+    <fx:Metadata>
+    	[HostComponent("spark.components.VSlider")]
+    </fx:Metadata>
+
+    <s:states>
+        <s:State name="normal"/>
+        <s:State name="disabled"/>
+    </s:states>
+
+    <s:Button id="track"
+        width="6"
+        left="0" top="0" bottom="0"
+        skinClass="com.flexpad.skin.VerticalSliderTrackSkin"/>
+    <s:Button id="thumb"
+        width="15" height="15"
+        left="-4" bottom="0"
+        skinClass="com.flexpad.skin.SliderThumbSkin"
+        includeIn="normal"/>
+
+</s:Skin>

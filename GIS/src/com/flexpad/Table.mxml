@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group 
+    creationComplete="creationCompleteHandler(event)"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx">
+    <s:layout>
+        <s:VerticalLayout gap="-1"/>
+    </s:layout>
+    <fx:Script>
+        <![CDATA[
+            import mx.events.FlexEvent;
+
+            private var rowsList:Array = [];
+
+            override public function set mxmlContent(value:Array):void
+            {
+                rowsList = value;
+            }
+
+            private var _selectedIndex:int = -1;
+
+            public function set selectedIndex(_index:int):void
+            {
+                _selectedIndex = _index;
+            }
+
+            public function get selectedIndex():int
+            {
+                return _selectedIndex;
+            }
+
+            protected function creationCompleteHandler(event:FlexEvent):void
+            {
+                if (rowsList.length > 0)
+                {
+                    for (var i:uint = 0; i < rowsList.length; i++)
+                    {
+                        var row:TableRow = rowsList[i] as TableRow;
+                        if (i == 0)
+                        {
+                            row.type = "first";
+                        }
+                        else
+                        {
+                            if (i == rowsList.length - 1)
+                            {
+                                row.type = "last";
+                            }
+                            else
+                            {
+                                row.type = "middle";
+                            }
+                        }
+                        addElement(row);
+                    }
+                }
+            }
+        ]]>
+    </fx:Script>
+    <s:filters>
+		<s:DropShadowFilter 
+			color="0x000000"
+			distance="1"
+			blurX="1"
+			blurY="1"
+			alpha="0.17"
+			angle="-90"
+			inner="true"/>
+		<s:DropShadowFilter 
+			color="0xFFFFFF"
+			distance="1"
+			blurX="0"
+			blurY="0"
+			alpha="0.75"
+			angle="90"/>
+    </s:filters>
+</s:Group>

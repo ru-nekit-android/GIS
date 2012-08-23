@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    ADOBE SYSTEMS INCORPORATED
+    Copyright 2008 Adobe Systems Incorporated
+    All Rights Reserved.
+
+    NOTICE: Adobe permits you to use, modify, and distribute this file
+    in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<!--- The default skin class for the Spark Button component.
+
+       @see spark.components.Button
+
+      @langversion 3.0
+      @playerversion Flash 10
+      @playerversion AIR 1.5
+      @productversion Flex 4
+-->
+<s:SparkSkin 
+    minHeight="30"
+    minWidth="30"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:fb="http://ns.adobe.com/flashbuilder/2009"
+    alpha.disabled="0.5"
+    xmlns:flexpad="com.flexpad.*">
+
+    <!-- host component -->
+    <fx:Metadata>
+        <![CDATA[ 
+        /** 
+         * @copy spark.skins.spark.ApplicationSkin#hostComponent
+         */
+        [HostComponent("spark.components.Button")]
+        ]]>
+    </fx:Metadata>
+
+    <!-- states -->
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="over"/>
+        <s:State name="down"/>
+        <s:State name="disabled"/>
+    </s:states>
+
+    <s:filters>
+        <s:DropShadowFilter 
+            color="0xFFFFFF"
+            distance="1"
+            alpha="0.25"
+            angle="90"
+            blurX="0"
+            blurY="0"/>
+        <s:DropShadowFilter 
+            color="0x000000"
+            distance="1"
+            alpha="0.5"
+            angle="90"
+            inner="true"
+            blurX="1"
+            blurY="1"/>
+    </s:filters>
+
+    <!-- layer 1: fill -->
+    <s:Rect 
+        left="1" right="1" top="1" bottom="1"
+        radiusX="4"
+        radiusY="4">
+        <s:fill>
+            <s:LinearGradient rotation="-90">
+                <s:GradientEntry 
+                    color="0x2463de"
+                    ratio="0"/>
+                <s:GradientEntry 
+                    color="0x2361dd"
+                    ratio="0.5"/>
+                <s:GradientEntry 
+                    color="0x376fe0"
+                    ratio="0.51"/>
+                <s:GradientEntry 
+                    color="0x759ae9"
+                    ratio="1"/>
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+
+
+    <!-- layer 1: border - put on top of the fill so it doesn't disappear when scale is less than 1 -->
+    <!--- @private -->
+    <s:Rect 
+        left="0" right="0" top="0" bottom="0"
+        radiusX="4"
+        radiusY="4">
+        <s:stroke>
+            <s:LinearGradientStroke rotation="90"
+                weight="1">
+                <s:GradientEntry 
+                    color="0x4e5052"
+                    ratio="0"/>
+                <s:GradientEntry 
+                    color="0x606368"
+                    ratio="0.31"/>
+                <s:GradientEntry color="0x575d65"/>
+            </s:LinearGradientStroke>
+        </s:stroke>
+    </s:Rect>
+
+    <!-- layer 8: text -->
+    <!--- @copy spark.components.supportClasses.ButtonBase#labelDisplay -->
+    <flexpad:ButtonLabel id="labelDisplay"
+        left="10" right="10" top="2" bottom="2"
+        textAlign="center"
+        verticalAlign="middle"
+        maxDisplayedLines="1"/>
+
+</s:SparkSkin>

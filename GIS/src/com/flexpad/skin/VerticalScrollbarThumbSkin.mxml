@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark">
+
+    <fx:Metadata>
+		[HostComponent("spark.components.Button")]
+	</fx:Metadata>
+
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="over"/>
+        <s:State name="down"/>
+        <s:State name="disabled"/>
+    </s:states>
+
+
+    <!-- background -->
+    <!-- Gripper -->
+    <s:Group id="group2"
+        left="0" right="0" top="0" bottom="0"
+        rotation="90"
+        includeIn="up,over,down,disabled">
+        <s:Rect id="rect0"
+            left="0" right="0" top="0" bottom="0"
+            radiusX="8">
+            <s:fill>
+                <s:LinearGradient rotation="90">
+                    <s:GradientEntry 
+                        color="0x005ECA"
+                        alpha="1.0"
+                        ratio="0"/>
+                    <s:GradientEntry 
+                        color="0xACE7FF"
+                        alpha="1"
+                        ratio="1"/>
+                </s:LinearGradient>
+            </s:fill>
+            <s:stroke>
+                <s:LinearGradientStroke caps="none"
+                    joints="miter"
+                    miterLimit="4"
+                    rotation="90"
+                    weight="1">
+                    <s:GradientEntry 
+                        color="#250f73"
+                        alpha="1.0"
+                        ratio="0"/>
+                    <s:GradientEntry 
+                        color="#666666"
+                        alpha="1.0"
+                        ratio="1"/>
+                </s:LinearGradientStroke>
+            </s:stroke>
+        </s:Rect>
+
+    </s:Group>
+    <s:Rect id="rect2"
+        width="7" width.disabled="4" width.down="4" width.over="4" width.up="5"
+        left="3" top="5" bottom="5"
+        alpha="0.2"
+        radiusX="5"
+        includeIn="disabled,up,down,over">
+        <s:fill>
+            <s:SolidColor color="0xFFFFFF"/>
+        </s:fill>
+    </s:Rect>
+    <s:Rect id="rect1"
+        width="7" width.disabled="5" width.down="5" width.over="5" width.up="5"
+        right="2" top="5" bottom="5"
+        alpha="0.5"
+        radiusX="5"
+        includeIn="disabled,up,down,over">
+        <s:fill>
+            <s:SolidColor color="0xFFFFFF"/>
+        </s:fill>
+    </s:Rect>
+    <s:transitions>
+        <s:Transition fromState="disabled"
+            toState="up"
+            autoReverse="true">
+            <s:Parallel>
+                <s:Parallel target="{group2}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>
+                <!--<s:Parallel target="{group1}">
+                    <s:Fade duration="0"/>
+                </s:Parallel>-->
+            </s:Parallel>
+        </s:Transition>
+    </s:transitions>
+
+</s:Skin>

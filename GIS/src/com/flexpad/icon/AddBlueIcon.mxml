@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group 
+    width="25" height="25"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx">
+
+    <s:filters>
+        <s:DropShadowFilter 
+            color="0x000000"
+            distance="1"
+            blurX="3"
+            blurY="3"
+            angle="90"
+            alpha="0.59"/>
+    </s:filters>
+
+    <s:Ellipse 
+        left="2" right="2" top="2" bottom="2">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry 
+                    color="0x70a1e6"
+                    ratio="0"/>
+                <s:GradientEntry 
+                    color="0x236ed8"
+                    ratio="1"/>
+            </s:LinearGradient>
+        </s:fill>
+    </s:Ellipse>
+
+    <s:Ellipse 
+        left="0" right="0" top="0" bottom="0">
+        <s:stroke>
+            <s:SolidColorStroke 
+                color="0xffffff"
+                weight="2"/>
+        </s:stroke>
+    </s:Ellipse>
+
+    <s:Group 
+        horizontalCenter="0"
+        verticalCenter="0">
+        <s:Rect 
+            x="5" width="3" height="13">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Rect>
+        <s:Rect 
+            y="5" width="13" height="3">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF"/>
+            </s:fill>
+        </s:Rect>
+    </s:Group>
+
+
+</s:Group>

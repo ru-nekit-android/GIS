@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin 
+    minHeight="35"
+    minWidth="15"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    alpha.disabled="0.5">
+
+    <fx:Metadata>
+    	[HostComponent("spark.components.VScrollBar")]
+    </fx:Metadata>
+
+    <s:states>
+        <s:State name="normal"/>
+        <s:State name="disabled"/>
+        <s:State name="inactive"/>
+    </s:states>
+
+
+    <s:Button id="incrementButton"
+        x.disabled="0" x.inactive="0" y.disabled="181" y.inactive="181" height.normal="18"
+        left.normal="0" bottom.normal="0"
+        skinClass="com.flexpad.skin.VerticalScrollbarDownButtonSkin"/>
+
+    <s:Button id="decrementButton"
+        x.disabled="0" x.inactive="0" y.disabled="0" y.inactive="0" height.normal="18"
+        left="0" left.normal="0" bottom="30" bottom.normal="15"
+        skinClass="com.flexpad.skin.VerticalScrollbarUpButtonSkin"/>
+    <s:Button id="track"
+        y.disabled="17" y.inactive="17" width="20" width.normal="15"
+        top="0" top.normal="0" bottom="25" bottom.normal="28"
+        skinClass="com.flexpad.skin.VerticalScrollbarTrackSkin"/>
+    <s:Button id="thumb"
+        x.disabled="0" x.inactive="0" x.normal="0" y.disabled="23" y.inactive="23" y.normal="0" width="15" width.normal="15" height.normal="28"
+        left="0" right="0"
+        skinClass="com.flexpad.skin.VerticalScrollbarThumbSkin"/>
+
+</s:Skin>
