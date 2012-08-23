@@ -6,19 +6,19 @@ Offline mobile map (OSM) + real time translate mobile geo position to desktop re
     <th>Screenshots</th>
   </tr></thead>
   <tbody><tr>
-    <td><img src="https://raw.github.com/ru-nekit-android/GIS/master/screenshots/1.jpg"/></td>
+    <td><img src="https://raw.github.com/ru-nekit-android/GIS/master/screenshots/1.png"/></td>
 
 	</tr>
 <tr>
-    <td><img src="https://raw.github.com/ru-nekit-android/GIS/master/screenshots/2.jpg"/></td>
+    <td><img src="https://raw.github.com/ru-nekit-android/GIS/master/screenshots/2.png"/></td>
 
 	</tr>
 <tr>
-    <td><img src="https://raw.github.com/ru-nekit-android/GIS/master/screenshots/3.jpg"/></td>
+    <td><img src="https://raw.github.com/ru-nekit-android/GIS/master/screenshots/3.png"/></td>
 
 	</tr>
 <tr>
-    <td><img src="https://raw.github.com/ru-nekit-android/GIS/master/screenshots/4.jpg"/></td>
+    <td><img src="https://raw.github.com/ru-nekit-android/GIS/master/screenshots/4.png"/></td>
 
 	</tr>
 <tr>
