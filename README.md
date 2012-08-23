@@ -1,4 +1,4 @@
-Offline mobile map (OSM) + real time sending mobile gps coordinates to desktop receiver.
+Offline mobile map (OSM) + p2p real time sending mobile gps coordinates to desktop receiver.
 
 
 <table>
